@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="View your TapMark courses, attendance history, and attendance rates.">
+    <title>Student dashboard — TapMark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script type="module" src="../js/student-dashboard.js"></script>
+  </head>
+  <body data-required-role="student" data-app-root="../">
+    <a class="skip-link" href="#dashboard-main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="../index.html"><img class="brand-mark" src="../public/img/logo.webp" alt=""><span>TapMark</span></a>
+      <nav aria-label="Student navigation">
+        <a class="button button-small" href="scan.html">Scan attendance</a>
+        <button class="button button-small" id="logout-button" type="button" hidden>Sign out</button>
+      </nav>
+    </header>
+    <p id="auth-status" class="dashboard-status" role="alert" aria-live="polite"></p>
+    <main class="dashboard-page student-dashboard" id="dashboard-main" data-protected-content hidden>
+      <div class="dashboard-heading">
+        <div>
+          <p class="eyebrow">Student workspace</p>
+          <h1>Your attendance</h1>
+          <p class="dashboard-intro">See your enrolled courses, attendance progress, and recent check-ins.</p>
+        </div>
+        <a class="button" href="scan.html">Scan a class code <span aria-hidden="true">→</span></a>
+      </div>
+
+      <p class="dashboard-notice" id="student-notice" role="status" aria-live="polite"></p>
+      <section aria-labelledby="courses-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Your schedule</p>
+            <h2 id="courses-title">Enrolled courses</h2>
+          </div>
+        </div>
+        <div class="student-course-list" id="student-course-list" aria-live="polite">
+          <p class="empty-state">Loading your courses…</p>
+        </div>
+      </section>
+
+      <section class="history-section" aria-labelledby="history-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Your check-ins</p>
+            <h2 id="history-title">Attendance history</h2>
+          </div>
+        </div>
+        <div class="history-card">
+          <div class="history-table-wrap">
+            <table class="history-table">
+              <thead>
+                <tr><th scope="col">Course</th><th scope="col">Date</th><th scope="col">Time</th></tr>
+              </thead>
+              <tbody id="history-list">
+                <tr><td class="empty-state" colspan="3">Loading your attendance history…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

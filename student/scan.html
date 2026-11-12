@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Scan a TapMark class code to record your attendance.">
+    <title>Scan attendance — TapMark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+    <script type="module" src="../js/student-scan.js"></script>
+  </head>
+  <body data-required-role="student" data-app-root="../">
+    <a class="skip-link" href="#scan-main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="../index.html"><img class="brand-mark" src="../public/img/logo.webp" alt=""><span>TapMark</span></a>
+      <nav aria-label="Student navigation">
+        <a href="dashboard.html">Dashboard</a>
+        <button class="button button-small" id="logout-button" type="button" hidden>Sign out</button>
+      </nav>
+    </header>
+    <p id="auth-status" class="dashboard-status" role="alert" aria-live="polite"></p>
+    <main class="scan-page" id="scan-main" data-protected-content hidden>
+      <a class="back-link" href="dashboard.html"><span aria-hidden="true">←</span> Back to dashboard</a>
+      <section class="scan-card" aria-labelledby="scan-title">
+        <p class="eyebrow">Class check-in</p>
+        <h1 id="scan-title">Scan the class code</h1>
+        <p class="scan-intro">Allow camera access, then hold your phone steady over the lecturer’s QR code.</p>
+        <div id="qr-reader" class="qr-reader" aria-label="QR code camera scanner"></div>
+        <p class="scan-status" id="scan-status" role="status" aria-live="polite">Starting your camera…</p>
+        <button class="button scan-again-button" id="scan-again-button" type="button" hidden>Scan another code</button>
+        <p class="scan-help">Your camera is used only to read the attendance code.</p>
+      </section>
+    </main>
+  </body>
+</html>

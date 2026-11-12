@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Student TapMark dashboard.">
+    <title>Student dashboard — TapMark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script type="module" src="../js/dashboard.js"></script>
+  </head>
+  <body data-required-role="student" data-app-root="../">
+    <a class="skip-link" href="#dashboard-main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="../index.html"><img class="brand-mark" src="../public/img/logo.webp" alt=""><span>TapMark</span></a>
+      <button class="button button-small" id="logout-button" type="button" hidden>Sign out</button>
+    </header>
+    <p id="auth-status" role="alert" aria-live="polite"></p>
+    <main class="dashboard-page" id="dashboard-main" data-protected-content hidden>
+      <p class="eyebrow">Student</p>
+      <h1>Your classes</h1>
+      <section class="dashboard-card" aria-label="Attendance dashboard">
+        <p>Your student dashboard is ready. Class check-in will appear here when it is set up for your account.</p>
+      </section>
+    </main>
+  </body>
+</html>
