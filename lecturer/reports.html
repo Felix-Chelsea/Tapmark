@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Review and export TapMark course attendance reports.">
+    <title>Attendance reports — TapMark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script type="module" src="../js/lecturer-reports.js"></script>
+  </head>
+  <body data-required-role="lecturer" data-app-root="../">
+    <a class="skip-link" href="#reports-main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="../index.html"><img class="brand-mark" src="../public/img/logo.webp" alt=""><span>TapMark</span></a>
+      <nav aria-label="Lecturer navigation">
+        <a href="dashboard.html">Courses</a>
+        <button class="button button-small" id="logout-button" type="button" hidden>Sign out</button>
+      </nav>
+    </header>
+    <p id="auth-status" class="dashboard-status" role="alert" aria-live="polite"></p>
+    <main class="dashboard-page reports-page" id="reports-main" data-protected-content hidden>
+      <div class="dashboard-heading reports-heading">
+        <div>
+          <p class="eyebrow">Lecturer workspace</p>
+          <h1>Attendance reports</h1>
+          <p class="dashboard-intro">Review course, session, and student attendance. Students below 75% are highlighted.</p>
+        </div>
+        <button class="button" id="export-csv" type="button" disabled>Export to CSV</button>
+      </div>
+      <p class="dashboard-notice" id="report-notice" role="status" aria-live="polite"></p>
+      <div class="report-legend"><span class="low-attendance-swatch" aria-hidden="true"></span> Below 75% attendance</div>
+      <section id="reports-list" class="reports-list" aria-label="Course attendance reports" aria-live="polite">
+        <p class="empty-state">Loading attendance reports…</p>
+      </section>
+    </main>
+  </body>
+</html>

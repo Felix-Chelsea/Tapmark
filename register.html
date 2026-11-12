@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <meta name="description" content="Create a TapMark student account.">
+    <title>Create account — TapMark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body data-app-root="./">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="TapMark home">
+        <img class="brand-mark" src="public/img/logo.webp" alt="">
+        <span>TapMark</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a class="button button-small" href="signin.html">Sign in</a>
+      </nav>
+    </header>
+    <main class="auth-page" id="main">
+      <section class="auth-card" aria-labelledby="register-title">
+        <p class="eyebrow">Get started</p>
+        <h1 id="register-title">Create your student account</h1>
+        <p class="auth-intro">Lecturer and administrator accounts are set up by an administrator.</p>
+        <form id="register-form" novalidate>
+          <label for="register-name">Full name</label>
+          <input id="register-name" name="name" type="text" autocomplete="name" maxlength="120" required>
+          <label for="register-email">Email address</label>
+          <input id="register-email" name="email" type="email" autocomplete="email" required>
+          <label for="register-password">Password</label>
+          <input id="register-password" name="password" type="password" autocomplete="new-password" minlength="8" required aria-describedby="password-hint">
+          <p class="field-hint" id="password-hint">Use at least 8 characters.</p>
+          <label for="register-password-confirm">Confirm password</label>
+          <input id="register-password-confirm" name="password-confirm" type="password" autocomplete="new-password" minlength="8" required>
+          <p class="form-message" id="register-message" role="status" aria-live="polite"></p>
+          <button class="button auth-submit" type="submit">Create student account</button>
+        </form>
+        <p class="auth-switch">Already have an account? <a href="signin.html">Sign in</a></p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="page-width footer-content">
+        <a class="brand" href="index.html"><img class="brand-mark" src="public/img/logo.webp" alt=""><span>TapMark</span></a>
+        <p>Attendance records are protected by database access policies.</p>
+      </div>
+    </footer>
+  </body>
+</html>

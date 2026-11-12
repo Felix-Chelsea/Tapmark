@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <meta name="description" content="Sign in to your TapMark account.">
+    <title>Sign in — TapMark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body data-app-root="./">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="TapMark home">
+        <img class="brand-mark" src="public/img/logo.webp" alt="">
+        <span>TapMark</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a class="button button-small" href="register.html">Create account</a>
+      </nav>
+    </header>
+    <main class="auth-page" id="main">
+      <section class="auth-card" aria-labelledby="login-title">
+        <p class="eyebrow">Welcome back</p>
+        <h1 id="login-title">Sign in to TapMark</h1>
+        <form id="login-form" novalidate>
+          <label for="login-email">Email address</label>
+          <input id="login-email" name="email" type="email" autocomplete="email" required>
+          <label for="login-password">Password</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+          <p class="form-message" id="login-message" role="status" aria-live="polite"></p>
+          <button class="button auth-submit" type="submit">Sign in</button>
+        </form>
+        <p class="auth-switch">New to TapMark? <a href="register.html">Create a student account</a></p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="page-width footer-content">
+        <a class="brand" href="index.html"><img class="brand-mark" src="public/img/logo.webp" alt=""><span>TapMark</span></a>
+        <p>Attendance records are protected by database access policies.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <meta name="description" content="TapMark makes classroom attendance quick and simple with secure, time-limited QR check-ins.">
+    <title>TapMark — Class attendance, made simple</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body class="landing-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="TapMark home">
+        <img class="brand-mark" src="public/img/logo.webp" alt="">
+        <span>TapMark</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#how-it-works">How it works</a>
+        <a href="signin.html">Sign in</a>
+        <a class="button button-small" href="register.html">Get started</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero page-width" id="home" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">A better rhythm for the classroom</p>
+          <h1 id="hero-title">Class starts.<br>Attendance takes <span class="accent-text">seconds.</span></h1>
+          <p class="hero-description">
+            TapMark makes attendance effortless. Lecturers share a secure,
+            time-limited QR code. Students scan in and get on with learning.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="register.html">Get started <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="#how-it-works">See how it works <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="setup-note">Already have an account? <a href="signin.html">Sign in</a></p>
+        </div>
+        <div class="checkin-card" aria-label="Example attendance check-in">
+          <div class="card-topline">
+            <span class="live-dot" aria-hidden="true"></span>
+            <span>LIVE CLASS SESSION</span>
+            <span class="time-left">01:24 left</span>
+          </div>
+          <div class="qr-placeholder" aria-hidden="true">
+            <span class="qr-corner top-left"></span>
+            <span class="qr-corner top-right"></span>
+            <span class="qr-corner bottom-left"></span>
+            <span class="qr-center">T</span>
+          </div>
+          <p class="class-name">Introduction to Biology</p>
+          <p class="class-detail">BIO 101 <span aria-hidden="true">·</span> Lecture Hall 2</p>
+          <div class="card-divider"></div>
+          <p class="expiry-copy"><span aria-hidden="true">◷</span> Secure code refreshes automatically</p>
+        </div>
+      </section>
+
+      <section class="how-section" id="how-it-works" aria-labelledby="how-title">
+        <div class="page-width">
+          <p class="eyebrow">Easy as scan, done</p>
+          <h2 id="how-title">Less admin. More learning.</h2>
+          <div class="steps">
+            <article class="step">
+              <span class="step-number" aria-hidden="true">01</span>
+              <h3>Lecturer starts class</h3>
+              <p>Start a class session and put its secure, time-limited QR code on screen.</p>
+            </article>
+            <article class="step">
+              <span class="step-number" aria-hidden="true">02</span>
+              <h3>Student scans in</h3>
+              <p>Students scan the live code from their phones and check in in seconds.</p>
+            </article>
+            <article class="step">
+              <span class="step-number" aria-hidden="true">03</span>
+              <h3>Attendance is recorded</h3>
+              <p>TapMark verifies every check-in and keeps the class record up to date.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="roles-section page-width" id="roles" aria-labelledby="roles-title">
+        <p class="eyebrow">One campus, in sync</p>
+        <h2 id="roles-title">Made for everyone in class.</h2>
+        <div class="role-list">
+          <article><h3>Students</h3><p>Check in quickly and stay on top of your attendance.</p></article>
+          <article><h3>Lecturers</h3><p>Run a session and see attendance come together in real time.</p></article>
+          <article><h3>Administrators</h3><p>Keep people, roles, and classes organized in one place.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-width footer-content">
+        <a class="brand" href="#home"><img class="brand-mark" src="public/img/logo.webp" alt=""><span>TapMark</span></a>
+        <p>Simple check-ins. Secure attendance records.</p>
+      </div>
+    </footer>
+  </body>
+</html>

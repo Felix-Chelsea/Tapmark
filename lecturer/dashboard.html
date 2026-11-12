@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Manage courses and live attendance sessions in TapMark.">
+    <title>Lecturer dashboard — TapMark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
+    <script type="module" src="../js/lecturer-dashboard.js"></script>
+  </head>
+  <body data-required-role="lecturer" data-app-root="../">
+    <a class="skip-link" href="#dashboard-main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="../index.html"><img class="brand-mark" src="../public/img/logo.webp" alt=""><span>TapMark</span></a>
+      <nav aria-label="Lecturer navigation">
+        <a href="reports.html">Attendance reports</a>
+        <button class="button button-small" id="logout-button" type="button" hidden>Sign out</button>
+      </nav>
+    </header>
+    <p id="auth-status" class="dashboard-status" role="alert" aria-live="polite"></p>
+    <main class="dashboard-page lecturer-dashboard" id="dashboard-main" data-protected-content hidden>
+      <div class="dashboard-heading">
+        <div>
+          <p class="eyebrow">Lecturer workspace</p>
+          <h1>Your courses</h1>
+          <p class="dashboard-intro">Create courses and open a live attendance check-in when class begins.</p>
+        </div>
+      </div>
+
+      <section class="course-create-card" aria-labelledby="create-course-title">
+        <h2 id="create-course-title">Add a course</h2>
+        <form id="course-form" class="course-form" novalidate>
+          <div class="course-field">
+            <label for="course-name">Course name</label>
+            <input id="course-name" name="name" type="text" maxlength="120" placeholder="e.g. Introduction to Biology" required>
+          </div>
+          <div class="course-field course-code-field">
+            <label for="course-code">Course code</label>
+            <input id="course-code" name="code" type="text" maxlength="24" placeholder="e.g. BIO 101" required>
+          </div>
+          <button class="button" id="create-course-button" type="submit">Add course</button>
+          <p class="form-message course-form-message" id="course-message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <p class="dashboard-notice" id="dashboard-notice" role="status" aria-live="polite"></p>
+      <section class="course-list" id="course-list" aria-label="Your courses" aria-live="polite">
+        <p class="empty-state">Loading your courses…</p>
+      </section>
+
+      <section class="session-panel" id="session-panel" aria-labelledby="session-course-name" hidden>
+        <div class="session-heading">
+          <div>
+            <p class="eyebrow">Live attendance session</p>
+            <h2 id="session-course-name"></h2>
+          </div>
+          <span class="session-state" id="session-state">Active</span>
+        </div>
+        <div class="session-body">
+          <div class="session-code-area">
+            <div class="session-qr-wrap" id="session-qr-wrap">
+              <canvas id="session-qr" width="240" height="240" aria-label="Attendance QR code"></canvas>
+            </div>
+            <p class="session-countdown" id="session-countdown" role="timer" aria-live="off"></p>
+            <p class="session-helper" id="session-helper">Students can scan this code to mark attendance.</p>
+            <button class="button" id="new-session-button" type="button" hidden>Generate new code</button>
+          </div>
+          <div class="attendance-area">
+            <div class="attendance-heading">
+              <h3>Checked in</h3>
+              <span class="attendance-count" id="attendance-count">0</span>
+            </div>
+            <ul class="attendance-list" id="attendance-list" aria-live="polite">
+              <li class="empty-state">No students have checked in yet.</li>
+            </ul>
+            <p class="attendance-live-label"><span class="live-dot" aria-hidden="true"></span> Updates live</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
