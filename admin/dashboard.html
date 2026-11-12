@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Manage TapMark users, courses, and student enrollments.">
+    <title>Admin dashboard — TapMark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script type="module" src="../js/admin-dashboard.js"></script>
+  </head>
+  <body data-required-role="admin" data-app-root="../">
+    <a class="skip-link" href="#dashboard-main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="../index.html"><img class="brand-mark" src="../public/img/logo.webp" alt=""><span>TapMark</span></a>
+      <button class="button button-small" id="logout-button" type="button" hidden>Sign out</button>
+    </header>
+    <p id="auth-status" class="dashboard-status" role="alert" aria-live="polite"></p>
+    <main class="dashboard-page admin-dashboard" id="dashboard-main" data-protected-content hidden>
+      <div class="dashboard-heading">
+        <div>
+          <p class="eyebrow">Administration</p>
+          <h1>Manage TapMark</h1>
+          <p class="dashboard-intro">Manage account roles, course assignments, and student enrollments.</p>
+        </div>
+      </div>
+      <p class="dashboard-notice" id="admin-notice" role="status" aria-live="polite"></p>
+
+      <section class="admin-section" aria-labelledby="users-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">Accounts</p><h2 id="users-title">Users and roles</h2></div>
+        </div>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th scope="col">Name</th><th scope="col">Email</th><th scope="col">Role</th><th scope="col">Action</th></tr></thead>
+            <tbody id="users-list"><tr><td class="empty-state" colspan="4">Loading users…</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="admin-section" aria-labelledby="courses-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">Teaching</p><h2 id="courses-title">Courses</h2></div>
+        </div>
+        <form class="admin-form" id="admin-course-form" novalidate>
+          <div class="course-field">
+            <label for="admin-course-name">Course name</label>
+            <input id="admin-course-name" name="name" type="text" maxlength="120" required>
+          </div>
+          <div class="course-field">
+            <label for="admin-course-code">Course code</label>
+            <input id="admin-course-code" name="code" type="text" maxlength="24" required>
+          </div>
+          <div class="course-field">
+            <label for="admin-course-lecturer">Lecturer</label>
+            <select id="admin-course-lecturer" name="lecturer_id" required></select>
+          </div>
+          <button class="button" id="admin-course-submit" type="submit">Create course</button>
+        </form>
+        <p class="form-message" id="course-message" role="status" aria-live="polite"></p>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th scope="col">Course</th><th scope="col">Code</th><th scope="col">Lecturer</th><th scope="col">Enrolled</th><th scope="col">Action</th></tr></thead>
+            <tbody id="courses-list"><tr><td class="empty-state" colspan="5">Loading courses…</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="admin-section" aria-labelledby="enrollments-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">Class lists</p><h2 id="enrollments-title">Enrollments</h2></div>
+        </div>
+        <form class="admin-form enrollment-form" id="enrollment-form">
+          <div class="course-field">
+            <label for="enrollment-course">Course</label>
+            <select id="enrollment-course" name="course_id" required></select>
+          </div>
+          <div class="course-field">
+            <label for="enrollment-student">Student</label>
+            <select id="enrollment-student" name="student_id" required></select>
+          </div>
+          <button class="button" id="enrollment-submit" type="submit">Enroll student</button>
+        </form>
+        <p class="form-message" id="enrollment-message" role="status" aria-live="polite"></p>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th scope="col">Course</th><th scope="col">Student</th><th scope="col">Enrolled</th><th scope="col">Action</th></tr></thead>
+            <tbody id="enrollments-list"><tr><td class="empty-state" colspan="4">Loading enrollments…</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
