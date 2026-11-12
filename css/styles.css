@@ -445,12 +445,12 @@ h2 { margin-bottom: 36px; font-size: clamp(1.8rem, 3.2vw, 2.5rem); letter-spacin
   .report-session { grid-template-columns: 1fr auto; gap: 6px 12px; }
   .report-session-roster { grid-column: 1 / -1; }
   .landing-page .site-header { min-height: 72px; }
-  .landing-page .hero { width: min(100% - 28px, 560px); gap: 34px; padding: 34px 22px 28px; border-radius: 22px; }
+  .landing-page .hero { width: min(100% - 28px, 560px); min-height: unset; grid-template-columns: minmax(0, 1fr); gap: 34px; padding: 34px 22px 28px; border-radius: 22px; }
   .landing-page .hero h1 { font-size: clamp(2.55rem, 10.5vw, 3.55rem); }
   .landing-page .hero-description { font-size: 1rem; line-height: 1.65; }
   .landing-page .hero-actions { gap: 16px; }
   .landing-page .hero-actions .button { min-height: 48px; }
-  .landing-page .checkin-card { width: min(100%, 360px); transform: none; }
+  .landing-page .checkin-card { width: min(100%, 360px); margin-top: 22px; transform: none; }
   .landing-page .how-section { margin-top: 42px; padding-block: 60px; }
   .landing-page .roles-section { padding-block: 60px; }
 }

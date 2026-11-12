@@ -3,28 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="TapMark administration tools.">
-    <title>Administration — TapMark</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
-    <script type="module" src="../js/dashboard.js"></script>
+    <meta name="description" content="Manage TapMark users, courses, and student enrollments.">
+    <meta http-equiv="refresh" content="0; url=dashboard.html">
+    <title>Admin dashboard — TapMark</title>
+    <script>
+      window.location.replace("dashboard.html");
+    </script>
   </head>
-  <body data-required-role="admin" data-app-root="../">
-    <a class="skip-link" href="#dashboard-main">Skip to content</a>
-    <header class="site-header">
-      <a class="brand" href="../index.html"><img class="brand-mark" src="../public/img/logo.webp" alt=""><span>TapMark</span></a>
-      <button class="button button-small" id="logout-button" type="button" hidden>Sign out</button>
-    </header>
-    <p id="auth-status" role="alert" aria-live="polite"></p>
-    <main class="dashboard-page" id="dashboard-main" data-protected-content hidden>
-      <p class="eyebrow">Administrator</p>
-      <h1>Administration</h1>
-      <section class="dashboard-card" aria-label="Administration dashboard">
-        <p>Manage user roles, courses, and student enrollments from the administration workspace.</p>
-        <p><a class="button" href="dashboard.html">Open admin dashboard</a></p>
-      </section>
-    </main>
+  <body>
+    <p>Opening the admin dashboard… <a href="dashboard.html">Continue</a></p>
   </body>
 </html>
